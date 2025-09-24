@@ -56,11 +56,11 @@ char UintToHexChar(uint8_t u) {
     }
 }
 
-std::string StringToHexString(const std::string& hex_string) {
+std::string StringToHexString(const std::string& s) {
     std::string res{};
-    res.reserve(2 * hex_string.length());
+    res.reserve(2 * s.length());
 
-    for (char c : hex_string) {
+    for (char c : s) {
         res.push_back(UintToHexChar((static_cast<uint8_t>(c) & 0xF0) >> 4));
         res.push_back(UintToHexChar(static_cast<uint8_t>(c) & 0x0F));
     }
